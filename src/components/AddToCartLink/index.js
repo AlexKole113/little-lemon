@@ -3,7 +3,7 @@ import './index.scss';
 
 const AddToCartLink = ({ setCart, isInCart, id }) => {
 
-    const addToCart      = () => setCart( prvState => ([...prvState, { id, amount:0 } ]) );
+    const addToCart      = () => setCart( prvState => ([...prvState, { id, amount: 1 } ]) );
     const removeFromCart = () => setCart( prvState => prvState.filter( v => v.id !== id ) );
 
 
