@@ -2,7 +2,7 @@ import {Link, NavLink} from "react-router-dom";
 import './index.scss'
 import {useState} from "react";
 
-const Header = () => {
+const Header = ({cart}) => {
 
     const [isMobileMenuActive, setMobileMenuActive] = useState(0)
 
@@ -35,6 +35,7 @@ const Header = () => {
                               <NavLink to={'/reservations'} className={isActive} >RESERVATIONS</NavLink>
                           </li>
                           <li onClick={()=>setMobileMenuActive(0)}>
+                              { cart.length ? <span className={`in-cart`}>{cart.length}</span> : '' }
                               <NavLink to={'/order-online'} className={isActive} >ORDER ONLINE</NavLink>
                           </li>
                           <li onClick={()=>setMobileMenuActive(0)}>

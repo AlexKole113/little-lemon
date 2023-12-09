@@ -21,11 +21,11 @@ const App = () => {
   return (
       <section className={`app`}>
           <Router>
-            <Header />
+            <Header cart={cart} />
               {/*<ErrorBoundary>*/}
                     <React.Suspense fallback={null}>
                         <Routes>
-                            <Route path="/" element={<PageHome />}></Route>
+                            <Route path="/" element={<PageHome cart={cart} setCart={setCart} />}></Route>
                             <Route path="about" element={<PageAbout />}></Route>
                             <Route path="menu" element={<PageMenu />}></Route>
                             <Route path="reservations" element={<PageReservations />}></Route>

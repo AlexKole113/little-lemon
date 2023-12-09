@@ -2,7 +2,7 @@ import './index.scss';
 import BrandButton from "../BrandButton";
 import ProductCard from "../ProductCard";
 import ProductCardGroup from "../ProductCardGroup";
-const WeeksSpecial = () => {
+const WeeksSpecial = ({cart, setCart}) => {
 
     const weeksSpecial = [
         {
@@ -37,7 +37,7 @@ const WeeksSpecial = () => {
                     <BrandButton url={'/menu'} text={'Online Menu'} />
                 </div>
                 <ProductCardGroup>
-                    { weeksSpecial.map((props) => <ProductCard {...props} />) }
+                    { weeksSpecial.map((props) => <ProductCard {...props} key={props.id} cart={cart} setCart={setCart} />) }
                 </ProductCardGroup>
             </div>
         </section>
