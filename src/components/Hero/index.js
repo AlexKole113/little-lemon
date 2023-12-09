@@ -1,6 +1,8 @@
 import heroImageDesktop from './assets/hero-desktop.webp'
 import heroImageMobile from './assets/hero-mobile.webp'
 import './index.scss'
+import {Link} from "react-router-dom";
+import BrandButton from "../BrandButton";
 
 const Hero = () => {
 
@@ -15,7 +17,7 @@ const Hero = () => {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur commodi cum debitis doloribus fuga harum.
                         </p>
                         <div className="hero_text_btns">
-                            <a href="/reservations" className="brand-button">Reserve a table</a>
+                            <BrandButton text={'Reserve a table'} url={'/reservations'} />
                         </div>
                     </div>
                     <figure className={`hero_image`}>

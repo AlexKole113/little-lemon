@@ -1,0 +1,13 @@
+@import "../../styles/mixins/mixins";
+
+.product-card-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  @include md {
+    grid-template-columns: repeat(3,1fr);
+  }
+  @include lg {
+    gap: 1.5rem;
+  }
+}

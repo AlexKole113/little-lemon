@@ -20,8 +20,11 @@
 
   &_text {
     color: #ffffff;
+    text-align: center;
     @include lg {
+      text-align: left;
       width: 45%;
+      padding-right: 1rem;
     }
     &_title {
       line-height: .5;
@@ -35,6 +38,7 @@
     &_intro {
       font-size: 1rem;
       font-weight: 400;
+      margin-bottom: 1rem;
     }
     &_btns {
 
@@ -46,9 +50,12 @@
     overflow: hidden;
     display: block;
     width: 100%;
+    margin: 0 0 3rem;
+    order: -1;
     @include lg {
       width: 55%;
-      margin-bottom: -4rem;
+      margin: 0 0 -4rem;
+      order: 0;
     }
     picture {
       display: block;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 import ErrorBoundary from "./ErrorBoundary";
@@ -13,6 +13,11 @@ import PageLogin from "../pages/Login";
 
 
 const App = () => {
+
+  const [cart, setCart] = useState([]);
+
+
+
   return (
       <section className={`app`}>
           <Router>

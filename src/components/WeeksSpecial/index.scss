@@ -1,0 +1,27 @@
+@import "../../styles/mixins/mixins";
+
+.weeks-special {
+  background-color: var(--brand-light-green);
+  padding: 2rem 0;
+  @include lg {
+    padding: 9.5rem 0 2rem;
+  }
+  &_title-btn {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+    margin-bottom: 2.4rem;
+    @include lg {
+      text-align: left;
+      flex-flow: row;
+    }
+  }
+  &_title {
+    margin-bottom: 1rem;
+    @include lg {
+      margin-bottom: 0;
+    }
+  }
+}

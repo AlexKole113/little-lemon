@@ -35,7 +35,7 @@ export default class ErrorBoundary extends Component {
                         </svg>
                     </div>
                     <div style={{ paddingLeft: '.5rem' }}>
-                        An error has been detected. We are already working on it.
+                        Shit happens. By the way, this is only a training project
                     </div>
                 </div>
             );
