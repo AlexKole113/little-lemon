@@ -13,7 +13,7 @@ const Header = ({cart}) => {
       <header className={`header`}>
           <div className="container">
               <div className="header_group">
-                  <figure className={'header_logo'}>
+                  <figure className={'header_logo'} onClick={()=>setMobileMenuActive(0)}>
                       <picture>
                           <Link title={'Home'} to="/">
                               <img src="./assets/Logo.svg" alt="logo" />

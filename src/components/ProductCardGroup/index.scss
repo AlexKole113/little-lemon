@@ -3,7 +3,7 @@
 .product-card-group {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
   @include md {
     grid-template-columns: repeat(3,1fr);
   }

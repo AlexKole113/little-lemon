@@ -24,7 +24,7 @@ const ProductCard = ({id, title,price,img:{mobile,desktop}, description, cart, s
                 <div className="card_text">
                     <div className="card_text_title-price">
                         <h3 className="card_text_title">{title}</h3>
-                        <span className="card_text_price">{`$${price}`}</span>
+                        <span className="card_text_price">{`$${price.toFixed(2)}`}</span>
                     </div>
                     <div className="card_text_desc">
                         <p>{description}</p>

@@ -9,6 +9,7 @@
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0px 0 3px 2px #00000014;
+    height: 100%;
   }
   &_img {
 
@@ -26,6 +27,9 @@
   &_text {
     padding: 1rem;
     background-color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
     &_title-price {
       display: flex;
       justify-content: space-between;
@@ -48,8 +52,8 @@
   }
   .go-to-cart {
     position: absolute;
-    left: -1rem;
-    top:-1rem;
+    left: calc( 50% - 1rem );
+    top: -1rem;
     width: 2rem;
     height: 2rem;
     background-color: var(--brand-yellow);
@@ -57,9 +61,20 @@
     align-items: center;
     justify-content: center;
     border-radius: 100%;
-    svg {
-      width: .75rem;
-      height: .75rem;
+    @include lg {
+      left: -1rem;
+      top:-1rem;
     }
+    svg {
+      width: 1rem;
+      height: 1rem;
+      @include lg {
+        width: .75rem;
+        height: .75rem;
+      }
+    }
+  }
+  &_add-to-cart {
+    margin-top: auto;
   }
 }

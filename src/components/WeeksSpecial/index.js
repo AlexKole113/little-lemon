@@ -24,7 +24,7 @@ const WeeksSpecial = ({cart, setCart}) => {
             title: 'Lemon Desert',
             price: 5.00,
             img: { mobile: './assets/lemon-dessert-mobile.webp', desktop: './assets/lemon-dessert-desktop.webp' },
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur commodi cum debitis doloribus fuga harum.'
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
         },
     ];
 
