@@ -1,0 +1,26 @@
+@import "./mixins/mixins";
+@import "./fonts";
+@import "./colors";
+@import "./layout";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.main-title {
+  font-family: var(--font-secondary);
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.sub-title {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  line-height: 1.25;
+  font-size: 2.25rem;
+}
+
+

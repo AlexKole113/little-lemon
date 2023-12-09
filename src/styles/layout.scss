@@ -1,0 +1,36 @@
+:root {
+  --content-size: 5vw;
+}
+@include md  {
+  :root {
+    --content-size: 2.08vw;
+  }
+}
+@include lg {
+  :root {
+    --content-size: 18px;
+  }
+}
+
+html {
+  height: 100%;
+  font-size: var(--content-size);
+  overflow-x: hidden;
+  line-height: var(--line-height-primary);
+}
+body {
+  min-height: 100vh;
+  position: relative;
+  font-family: var(--font-primary);
+  max-width: 100vw;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  max-width: 780px;
+  margin: 0 auto;
+  @include lg {
+    padding: 0;
+  }
+}
