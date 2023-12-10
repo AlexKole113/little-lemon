@@ -1,5 +1,6 @@
 import Hero from "../../components/Hero";
 import WeeksSpecial from "../../components/WeeksSpecial";
+import Testimonials from "../../components/Testimonials";
 
 const PageHome = ({cart, setCart}) => {
 
@@ -7,6 +8,7 @@ const PageHome = ({cart, setCart}) => {
         <section className={`page page-home`}>
             <Hero />
             <WeeksSpecial cart={cart} setCart={setCart}  />
+            <Testimonials />
         </section>
     )
 }
