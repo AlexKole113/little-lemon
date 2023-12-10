@@ -1,0 +1,99 @@
+@import "../../styles/mixins/mixins";
+.cta {
+  $block_name: &;
+  background-color: var(--brand-dark-green);
+  padding: 2rem 0 4.6rem;
+
+
+  @include lg {
+    padding: 4.6rem 0 0;
+  }
+
+  &_group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column;
+    @include lg {
+      flex-flow: row;
+    }
+
+  }
+
+  &_text {
+    color: #ffffff;
+    text-align: center;
+    @include lg {
+      text-align: left;
+      width: 50%;
+      padding-right: 1rem;
+    }
+    &_title {
+      line-height: .5;
+      color: var(--brand-yellow);
+
+    }
+    &_sub-title {
+      margin: 0 0 1.2rem;
+
+    }
+    &_intro {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    &_btns {
+
+    }
+  }
+
+  &_images-group {
+    --image-bias: 2rem;
+    @include lg {
+      --image-bias: 3rem;
+    }
+    position: relative;
+    height: 23rem;
+    width: 80%;
+    margin-top: 4rem;
+    @include lg {
+      width: calc(50% - var(--image-bias));
+      order: 0;
+    }
+
+
+    #{$block_name}_image {
+      position: absolute;
+      left:  var(--image-bias);
+      top: calc( var(--image-bias) * -1 );
+      right: calc( var(--image-bias) * -1 );
+      bottom: var(--image-bias);
+      border-radius: 1rem;
+      overflow: hidden;
+      display: block;
+
+      &:nth-child(2) {
+        left: calc( var(--image-bias) * -1 );
+        top: var(--image-bias);
+        right: var(--image-bias);
+        bottom: calc( var(--image-bias) * -1 );
+      }
+
+
+
+      picture {
+        display: block;
+        height: 100%;
+        img {
+          max-width: 100%;
+          height: 100%;
+          display: block;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+  }
+
+}
