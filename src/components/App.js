@@ -36,7 +36,7 @@ const App = () => {
                         </Routes>
                     </React.Suspense>
               {/*</ErrorBoundary>*/}
-            <Footer />
+            <Footer cart={cart} />
           </Router>
       </section>
   );

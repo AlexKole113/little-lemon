@@ -17,6 +17,9 @@
     @include md {
       grid-template-columns: repeat(4,1fr);
     }
+    @include lg {
+      gap: 2rem;
+    }
   }
 }
 
@@ -39,6 +42,7 @@
   }
   &_img {
     width: 40%;
+    max-width: 6rem;
     height: auto;
     aspect-ratio: 1/1;
     border-radius: 100%;
@@ -47,7 +51,7 @@
     border: 1px solid #bebebe;
     @include md {
       width: 70%;
-      margin: .5rem auto 0;
+      margin: 1rem auto;
     }
     picture {
       img {
@@ -64,9 +68,6 @@
     text-align: center;
     font-size: 1rem;
     margin: auto;
-    @include md {
-      font-size: .8rem;
-    }
   }
 
 }

@@ -1,8 +1,15 @@
 @import "../../styles/mixins/mixins";
 .cta {
   $block_name: &;
+
+  --image-bias: 2rem;
+  @include lg {
+    --image-bias: 3rem;
+  }
+
   background-color: var(--brand-dark-green);
   padding: 2rem 0 4.6rem;
+  margin-bottom: var(--image-bias);
 
 
   @include lg {
@@ -48,10 +55,6 @@
   }
 
   &_images-group {
-    --image-bias: 2rem;
-    @include lg {
-      --image-bias: 3rem;
-    }
     position: relative;
     height: 23rem;
     width: 80%;
@@ -71,6 +74,9 @@
       border-radius: 1rem;
       overflow: hidden;
       display: block;
+      @include md {
+        right: 0;
+      }
 
       &:nth-child(2) {
         left: calc( var(--image-bias) * -1 );

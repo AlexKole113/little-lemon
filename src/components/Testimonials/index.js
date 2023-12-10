@@ -10,28 +10,28 @@ const Testimonials = () => {
             name: 'John Customer',
             img: { mobile: './assets/testimonial-1-mobile.webp', desktop: './assets/testimonial-1-desktop.webp' },
             rating: 1,
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+            text: '"Lorem ipsum dolor sit amet, consectetur adipisicing elit."'
         },
         {
             id: '002',
             name: 'Xavier',
             img: { mobile: './assets/testimonial-2-mobile.webp', desktop: './assets/testimonial-2-desktop.webp' },
             rating: 2,
-            text: 'Lorem ipsum dolor sit amet.'
+            text: '"Lorem ipsum dolor sit amet."'
         },
         {
             id: '003',
             name: 'Andrew Debugger',
             img: { mobile: './assets/testimonial-3-mobile.webp', desktop: './assets/testimonial-3-desktop.webp' },
             rating: 5,
-            text: 'Lorem ipsum.'
+            text: '"Lorem ipsum."'
         },
         {
             id: '004',
             name: 'Mary Tester',
             img: { mobile: './assets/testimonial-4-mobile.webp', desktop: './assets/testimonial-4-desktop.webp' },
             rating: 5,
-            text: 'Lorem ipsum dolor sit amet, consectetu.'
+            text: '"Lorem ipsum dolor sit amet, consectetu."'
         },
     ]
 

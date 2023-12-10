@@ -1,0 +1,137 @@
+@import "../../styles/mixins/mixins";
+
+.footer {
+  $block_name: &;
+  padding: 2rem 0;
+
+  &_group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    @include md {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    #{$block_name}_col {
+      font-size: .9rem;
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
+
+      #{$block_name}_title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 1rem 0;
+      }
+      #{$block_name}_text {
+        font-size: inherit;
+
+      }
+
+      .contacts {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+        &_item {
+          margin-bottom: .5rem;
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000000;
+            @include md {
+              justify-content: flex-start;
+            }
+            svg {
+              width: .7rem;
+              height: .7rem;
+              margin-right: .5rem;
+            }
+            &_text {
+
+            }
+          }
+        }
+      }
+
+      #{$block_name}_nav {
+
+        ul {
+         list-style: none;
+         padding: 0;
+          li {
+            position: relative;
+            margin-bottom: .5rem;
+            width: max-content;
+
+            .in-cart {
+              position: absolute;
+              right: -.5rem;
+              top: -.2rem;
+              font-size: .5rem;
+              background-color: var(--brand-yellow);
+              border-radius: 1rem;
+              padding: .1rem .3rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 0 1px 0px #000000d1;
+            }
+            a {
+              font-size: inherit;
+              text-decoration: none;
+              color: #000000;
+              @include md {
+                font-size: inherit;
+              }
+              &.active {
+                color: var(--brand-yellow);
+              }
+            }
+          }
+        }
+      }
+
+      #{$block_name}-logo-group {
+        @include md {
+          max-width: 13rem;
+        }
+
+      #{$block_name}_logo {
+          picture {
+            width: 100%;
+            a {
+              display: block;
+              width: 100%;
+              img {
+                width: 100%;
+                display: block;
+                max-width: 100%;
+                height: auto;
+
+              }
+            }
+
+          }
+
+        }
+
+        &_social {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0.5rem 0;
+          a {
+            margin: 0 .5rem;
+            svg {
+              width: 1.75rem;
+              height: 1.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
