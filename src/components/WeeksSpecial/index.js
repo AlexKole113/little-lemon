@@ -2,31 +2,20 @@ import './index.scss';
 import BrandButton from "../BrandButton";
 import ProductCard from "../ProductCard";
 import ProductCardGroup from "../ProductCardGroup";
-const WeeksSpecial = ({cart, setCart}) => {
+const WeeksSpecial = ({cart, setCart, menu}) => {
 
-    const weeksSpecial = [
-        {
-            id: '001',
-            title: 'Greek salad',
-            price: 12.99,
-            img: { mobile: './assets/greek-salad-mobile.webp', desktop: './assets/greek-salad-desktop.webp' },
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur commodi cum debitis doloribus fuga harum.'
-        },
-        {
-            id: '002',
-            title: 'Bruchetta',
-            price: 5.99,
-            img: { mobile: './assets/bruchetta-mobile.webp', desktop: './assets/bruchetta-desktop.webp' },
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur commodi cum debitis doloribus fuga harum.'
-        },
-        {
-            id: '003',
-            title: 'Lemon Desert',
-            price: 5.00,
-            img: { mobile: './assets/lemon-dessert-mobile.webp', desktop: './assets/lemon-dessert-desktop.webp' },
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },
-    ];
+    //data from api <id>[]
+    const weeksSpecial = [ '001', '002', '003' ];
+
+    const getWeekSpecialFromMenuByID = ( id ) => {
+        const menuItem = menu.find( (elm) => elm.id === id);
+        if (menuItem) {
+            return (
+                <ProductCard {...menuItem} key={id} cart={cart} setCart={setCart} />
+            )
+        }
+        return null;
+    }
 
 
     return(
@@ -37,7 +26,7 @@ const WeeksSpecial = ({cart, setCart}) => {
                     <BrandButton url={'/menu'} text={'Online Menu'} />
                 </div>
                 <ProductCardGroup>
-                    { weeksSpecial.map((props) => <ProductCard {...props} key={props.id} cart={cart} setCart={setCart} />) }
+                    { weeksSpecial.map( getWeekSpecialFromMenuByID ) }
                 </ProductCardGroup>
             </div>
         </section>
