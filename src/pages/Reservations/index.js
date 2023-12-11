@@ -1,9 +1,8 @@
-const PageReservations = () => {
+import TitlePage from "../../components/TitlePage";
 
-    return (
-        <section className={`page page-reservations`}>
-            <h1>Reservations</h1>
-        </section>
-    )
-}
+const PageReservations = () => (
+    <section className={`page page-reservations`}>
+        <TitlePage text={'Reservations'} />
+    </section>
+)
 export default PageReservations;

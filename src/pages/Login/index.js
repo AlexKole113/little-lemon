@@ -1,9 +1,8 @@
-const PageLogin = () => {
+import TitlePage from "../../components/TitlePage";
 
-    return (
-        <section className={`page page-login`}>
-            <h1>Login</h1>
-        </section>
-    )
-}
+const PageLogin = () => (
+    <section className={`page page-login`}>
+        <TitlePage text={'Login'} />
+    </section>
+)
 export default PageLogin;

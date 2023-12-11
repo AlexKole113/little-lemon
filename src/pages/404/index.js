@@ -1,10 +1,9 @@
-const Page404 = () => {
+import TitlePage from "../../components/TitlePage";
 
-    return (
-        <section className={`page page-404`}>
-            <h1>404 - baby</h1>
-        </section>
-    )
-}
+const Page404 = () => (
+    <section className={`page page-404`}>
+        <TitlePage text={'404'} />
+    </section>
+)
 
 export default Page404;

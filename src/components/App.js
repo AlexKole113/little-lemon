@@ -27,7 +27,7 @@ const App = () => {
                         <Routes>
                             <Route path="/" element={<PageHome cart={cart} setCart={setCart} />}></Route>
                             <Route path="about" element={<PageAbout />}></Route>
-                            <Route path="menu" element={<PageMenu />}></Route>
+                            <Route path="menu" element={<PageMenu cart={cart} setCart={setCart} />}></Route>
                             <Route path="reservations" element={<PageReservations />}></Route>
                             <Route path="order-online" element={<PageOrderOnline />}></Route>
                             <Route path="login" element={<PageLogin />}></Route>

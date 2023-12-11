@@ -4,16 +4,13 @@ import Testimonials from "../../components/Testimonials";
 import CTA from "../../components/CTA";
 
 
-const PageHome = ({cart, setCart}) => {
-
-    return (
-        <section className={`page page-home`}>
-            <Hero />
-            <WeeksSpecial cart={cart} setCart={setCart}  />
-            <Testimonials />
-            <CTA />
-        </section>
-    )
-}
+const PageHome = ({cart, setCart}) => (
+    <section className={`page page-home`}>
+        <Hero />
+        <WeeksSpecial cart={cart} setCart={setCart}  />
+        <Testimonials />
+        <CTA />
+    </section>
+)
 
 export default PageHome;

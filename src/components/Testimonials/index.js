@@ -1,6 +1,19 @@
 import './index.scss'
 import StarRating from "../StarRating";
 
+//This should come with the API
+import testimonial1desktop from './assets/testimonial-1-desktop.webp';
+import testimonial1mobile from './assets/testimonial-1-mobile.webp';
+
+import testimonial2desktop from './assets/testimonial-2-desktop.webp';
+import testimonial2mobile from './assets/testimonial-2-mobile.webp';
+
+import testimonial3desktop from './assets/testimonial-3-desktop.webp';
+import testimonial3mobile from './assets/testimonial-3-mobile.webp';
+
+import testimonial4desktop from './assets/testimonial-4-desktop.webp';
+import testimonial4mobile from './assets/testimonial-4-mobile.webp';
+
 
 const Testimonials = () => {
 
@@ -8,28 +21,28 @@ const Testimonials = () => {
         {
             id: '001',
             name: 'John Customer',
-            img: { mobile: './assets/testimonial-1-mobile.webp', desktop: './assets/testimonial-1-desktop.webp' },
+            img: { mobile: testimonial1mobile, desktop: testimonial1desktop },
             rating: 1,
             text: '"Lorem ipsum dolor sit amet, consectetur adipisicing elit."'
         },
         {
             id: '002',
             name: 'Xavier',
-            img: { mobile: './assets/testimonial-2-mobile.webp', desktop: './assets/testimonial-2-desktop.webp' },
+            img: { mobile: testimonial2mobile, desktop: testimonial2desktop },
             rating: 2,
             text: '"Lorem ipsum dolor sit amet."'
         },
         {
             id: '003',
             name: 'Andrew Debugger',
-            img: { mobile: './assets/testimonial-3-mobile.webp', desktop: './assets/testimonial-3-desktop.webp' },
+            img: { mobile: testimonial3mobile, desktop: testimonial3desktop },
             rating: 5,
             text: '"Lorem ipsum."'
         },
         {
             id: '004',
             name: 'Mary Tester',
-            img: { mobile: './assets/testimonial-4-mobile.webp', desktop: './assets/testimonial-4-desktop.webp' },
+            img: { mobile: testimonial4mobile, desktop: testimonial4desktop },
             rating: 5,
             text: '"Lorem ipsum dolor sit amet, consectetu."'
         },
