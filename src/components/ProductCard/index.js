@@ -2,7 +2,7 @@ import AddToCartLink from "../AddToCartLink";
 import './index.scss';
 import {Link} from "react-router-dom";
 
-const ProductCard = ({id, title,price,img:{mobile,desktop}, description, cart, setCart }) => {
+const ProductCard = ({id, title,price,img:{mobile,desktop}, description, cart, dispatch }) => {
     const isInCart       = () => cart.find( (elm) => elm.id === id)
 
     return(
@@ -30,7 +30,7 @@ const ProductCard = ({id, title,price,img:{mobile,desktop}, description, cart, s
                         <p>{description}</p>
                     </div>
                     <div className="card_add-to-cart">
-                        <AddToCartLink id={id} setCart={setCart} isInCart={isInCart}  />
+                        <AddToCartLink id={id} dispatch={dispatch} isInCart={isInCart} cart={cart}  />
                     </div>
                 </div>
             </div>

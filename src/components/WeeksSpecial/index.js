@@ -2,7 +2,7 @@ import './index.scss';
 import BrandButton from "../BrandButton";
 import ProductCard from "../ProductCard";
 import ProductCardGroup from "../ProductCardGroup";
-const WeeksSpecial = ({cart, setCart, menu}) => {
+const WeeksSpecial = ({cart, dispatch, menu}) => {
 
     //data from api <id>[]
     const weeksSpecial = [ '001', '002', '003' ];
@@ -11,12 +11,11 @@ const WeeksSpecial = ({cart, setCart, menu}) => {
         const menuItem = menu.find( (elm) => elm.id === id);
         if (menuItem) {
             return (
-                <ProductCard {...menuItem} key={id} cart={cart} setCart={setCart} />
+                <ProductCard {...menuItem} key={id} cart={cart} dispatch={dispatch} />
             )
         }
         return null;
     }
-
 
     return(
         <section className={'weeks-special'}>
