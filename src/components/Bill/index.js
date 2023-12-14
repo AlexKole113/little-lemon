@@ -1,6 +1,6 @@
 import './index.scss';
 
-const Bill = ({cart,setCart, menu}) => {
+const Bill = ({cart, dispatch, menu}) => {
 
     const getProductTitleByID = (id) => {
         const product =  menu.find( (elm) => elm.id === id);

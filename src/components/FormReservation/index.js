@@ -1,8 +1,21 @@
 import './index.scss'
+import mainActions from "../../actions/mainActions";
+import {useEffect} from "react";
+import FormInputDate from "../FormInputDate";
+import FormSelectTime from "../FormSelectTime";
+import FormInputGuests from "../FormInputGuests";
+import FormSelectOccasion from "../FormSelectOccasion";
 
-const FormReservation = () => {
+const FormReservation = ({availableValues, requestDetails, dispatch}) => {
 
+    //request time for specific date
+    useEffect(() => {
+          console.log('API Request')
+    },[requestDetails.date])
 
+console.log(availableValues)
+
+    const {availableTime, availableOccasion} = availableValues;
 
     return(
         <section className={`main-reservation-group`}>
@@ -11,20 +24,11 @@ const FormReservation = () => {
 
                 </div>
                 <form>
-                    <input type={'date'}  placeholder={`Choose Date*`} />
-                    <select placeholder={`Choose Time*`}>
-                        <option>17:00</option>
-                        <option>18:00</option>
-                        <option>19:00</option>
-                        <option>20:00</option>
-                        <option>21:00</option>
-                        <option>22:00</option>
-                    </select>
-                    <input type={'number'} placeholder={'Number of guests'} min={'1'} max={'10'}  />
-                    <select placeholder={`Occasion`}>
-                        <option>Birthday</option>
-                        <option>Anniversary</option>
-                    </select>
+                    <FormInputDate date={requestDetails.date} dispatch={dispatch} />
+                    <FormSelectTime availableTime={availableTime} selectedTime={requestDetails.time} dispatch={dispatch} />
+                    <FormInputGuests guests={requestDetails.guests} dispatch={dispatch} />
+                    <FormSelectOccasion availableOccasion={availableOccasion} occasion={requestDetails.occasion} dispatch={dispatch} />
+
                     <button type="submit" className={`brand-button`} >Reserve a table</button>
                 </form>
             </div>

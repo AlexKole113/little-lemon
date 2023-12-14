@@ -3,10 +3,10 @@ import TitlePage from "../../components/TitlePage";
 import Menu from "../../components/Menu";
 
 
-const PageMenu = ({cart, setCart, menu}) => (
+const PageMenu = ({cart, dispatch, menu}) => (
     <section className={`page page-menu`}>
         <TitlePage text={'Menu'} />
-        <Menu cart={cart} setCart={setCart} menu={menu} />
+        <Menu cart={cart} dispatch={dispatch} menu={menu} />
         <Testimonials />
     </section>
 )

@@ -10,7 +10,27 @@ const mainActions = {
             payload: []
         }
     },
-    reservation: {
+
+    userRequest: {
+        updateDate: {
+            type: 'updateDate',
+            payload: ''
+        },
+        updateTime: {
+            type: 'updateTime',
+            payload: ''
+        },
+        updateGuests: {
+            type: 'updateGuests',
+            payload: 1
+        },
+        updateOccasion: {
+            type: 'updateOccasion',
+            payload: ''
+        },
+    },
+
+    responseAPI: {
         setAvailableTime: {
             type: 'setAvailableTime',
             payload: []

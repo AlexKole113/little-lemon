@@ -9,7 +9,6 @@ const AddToCartLink = ({ dispatch, isInCart, id, cart }) => {
     const onRemoveFromCart = () => dispatch({type: mainActions.cart.updateCart.type , payload: removeFromCartByID(cart,id) });
 
 
-
     return (
         <div className={`add-remove-group`} >
             {
