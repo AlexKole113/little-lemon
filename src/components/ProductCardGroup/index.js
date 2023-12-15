@@ -1,6 +1,6 @@
 import './index.scss'
 const ProductCardGroup = ({children}) => (
-    <div className="product-card-group">
+    <div data-test-id="menu-card-group" className="product-card-group">
         {children}
     </div>
 )

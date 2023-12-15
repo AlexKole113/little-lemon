@@ -74,15 +74,19 @@
           font-size: 1.5rem;
           text-decoration: none;
           color: #000000;
+          transition: color .3s;
           @include md {
             font-size: .85rem;
           }
           @include lg {
             font-size: .9rem;
           }
-          &.active {
+          &.active,
+          &:hover,
+          &:focus {
             color: var(--brand-yellow);
           }
+
         }
       }
     }

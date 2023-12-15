@@ -1,8 +1,9 @@
 import mainActions from "../../actions/mainActions";
 import {useState} from "react";
+import './styles.scss';
 
 
-const FormInputDate = ({ date, dispatch }) => {
+const InputFormDate = ({ date, dispatch }) => {
 
     const [state, setState] = useState({ error: false, message: null });
 
@@ -13,7 +14,7 @@ const FormInputDate = ({ date, dispatch }) => {
         const today         = new Date();
         const requestedDate = new Date( `${e.target.value} 23:59:59` )
         if ( requestedDate < today ) {
-            setState((p)=> ({error: true, message: 'Hi Marty, Doc hasn\'t invented a time machine yet' }));
+            setState((p)=> ({error: true, message: 'Doc hasn\'t invented a time machine yet' }));
             return;
         }
 
@@ -25,8 +26,8 @@ const FormInputDate = ({ date, dispatch }) => {
     return(
         <div className="date-group">
             { state.error && <span className="alert">{state.message}</span> }
-            <input type={'date'}  placeholder={`Choose Date*`} value={date} onChange={onChange} />
+            <input className={ state.error ? 'invalid' : '' } type={'date'}  placeholder={`Choose Date*`} value={date} onChange={onChange} />
         </div>
     )
 }
-export default FormInputDate;
+export default InputFormDate;

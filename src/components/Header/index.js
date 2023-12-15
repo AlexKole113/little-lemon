@@ -10,7 +10,7 @@ const Header = ({cart}) => {
 
 
     return(
-      <header className={`header`}>
+      <header data-test-id="header" className={`header`}>
           <div className="container">
               <div className="header_group">
                   <figure className={'header_logo'} onClick={()=>setMobileMenuActive(0)}>

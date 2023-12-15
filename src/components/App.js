@@ -18,7 +18,9 @@ import mainReducer from "../reducers/mainReducer";
 
 const App = () => {
 
-  //  TODO: add useReducer, add Main component for form, API
+  //  TODO:
+  //   1. UNIT TESTS (FOR Occassion Form
+  //   2. API
 
     //data from api
   const initialState = {

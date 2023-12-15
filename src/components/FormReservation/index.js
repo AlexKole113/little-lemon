@@ -1,10 +1,9 @@
 import './index.scss'
-import mainActions from "../../actions/mainActions";
 import {useEffect} from "react";
-import FormInputDate from "../FormInputDate";
-import FormSelectTime from "../FormSelectTime";
-import FormInputGuests from "../FormInputGuests";
-import FormSelectOccasion from "../FormSelectOccasion";
+import InputFormDate from "../InputFormDate";
+import SelectFormTime from "../SelectFormTime";
+import InputFormGuests from "../InputFormGuests";
+import SelectFormOccasion from "../SelectFormOccasion";
 
 const FormReservation = ({availableValues, requestDetails, dispatch}) => {
 
@@ -13,24 +12,28 @@ const FormReservation = ({availableValues, requestDetails, dispatch}) => {
           console.log('API Request')
     },[requestDetails.date])
 
-console.log(availableValues)
 
     const {availableTime, availableOccasion} = availableValues;
 
     return(
         <section className={`main-reservation-group`}>
             <div className="container">
-                <div className="main-reservation-group_notification-box">
 
+                <div className="reservation-form-group">
+                    <div className="reservation-form-group_notify"></div>
+                    <form className={`reservation-form`}>
+                        <div className="reservation-form_fields">
+                            <InputFormDate date={requestDetails.date} dispatch={dispatch} />
+                            <SelectFormTime availableTime={availableTime} selectedTime={requestDetails.time} dispatch={dispatch} />
+                            <InputFormGuests guests={requestDetails.guests} dispatch={dispatch} />
+                            <SelectFormOccasion availableOccasion={availableOccasion} occasion={requestDetails.occasion} dispatch={dispatch} />
+                        </div>
+
+                        <button type="submit" className={`brand-button`} >Reserve a table</button>
+                    </form>
                 </div>
-                <form>
-                    <FormInputDate date={requestDetails.date} dispatch={dispatch} />
-                    <FormSelectTime availableTime={availableTime} selectedTime={requestDetails.time} dispatch={dispatch} />
-                    <FormInputGuests guests={requestDetails.guests} dispatch={dispatch} />
-                    <FormSelectOccasion availableOccasion={availableOccasion} occasion={requestDetails.occasion} dispatch={dispatch} />
 
-                    <button type="submit" className={`brand-button`} >Reserve a table</button>
-                </form>
+
             </div>
         </section>
     )

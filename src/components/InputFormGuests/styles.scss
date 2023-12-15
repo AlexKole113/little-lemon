@@ -1,0 +1,17 @@
+@import "../../styles/mixins/mixins";
+.guest-group {
+  padding: 1rem 0 0;
+  position: relative;
+
+  .alert {
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    height: 1rem;
+    color: tomato;
+    font-size: .6rem;
+    font-style: italic;
+  }
+
+}

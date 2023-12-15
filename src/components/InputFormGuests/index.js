@@ -1,8 +1,9 @@
 import {useState} from "react";
 import mainActions from "../../actions/mainActions";
+import './styles.scss'
 
 
-const FormInputGuests = ({guests, dispatch}) => {
+const InputFormGuests = ({guests, dispatch}) => {
 
 
     const [state, setState] = useState({ error: false, message: null });
@@ -29,9 +30,9 @@ const FormInputGuests = ({guests, dispatch}) => {
     return(
         <div className="guest-group">
             { state.error && <span className="alert">{state.message}</span> }
-            <input type={'number'} placeholder={'Number of guests'} min={guestNumberLimits.min} max={guestNumberLimits.max} value={guests} onChange={onChange}  />
+            <input className={ state.error ? 'invalid' : '' } type={'number'} placeholder={'Number of guests'} min={guestNumberLimits.min} max={guestNumberLimits.max} value={guests} onChange={onChange}  />
         </div>
     )
 }
 
-export default FormInputGuests;
+export default InputFormGuests;

@@ -4,7 +4,10 @@
   &_title {
     text-transform: uppercase;
     text-align: center;
-    margin: 4rem 0;
+    margin: 2rem 0;
     font-weight: 500;
+    @include md {
+      margin: 5rem 0;
+    }
   }
 }
