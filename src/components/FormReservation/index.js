@@ -30,18 +30,28 @@ const FormReservation = ({availableValues, requestDetails, dispatch}) => {
 
     const onSubmitFieldNotFilled = ( state , message ) => state === false ? message : null;
 
-    const formValidationBeforeSubmit = () => {
-        if ( !requestDetails.date ) setSubmitCheck( (p) => ({...p, isDateSelected: false}) );
-        if ( !requestDetails.time ) setSubmitCheck( (p) => ({...p, isTimeSelected: false}) );
-        if ( !requestDetails.guests ) setSubmitCheck( (p) => ({...p, isGuestsSelected:false}) );
+    const isReadyToSent = () => {
+        let isFieldFilled = true;
+        if ( !requestDetails.date ) {
+            isFieldFilled = false;
+            setSubmitCheck( (p) => ({...p, isDateSelected: false}) );
+        }
+        if ( !requestDetails.time ) {
+            isFieldFilled = false;
+            setSubmitCheck( (p) => ({...p, isTimeSelected: false}) );
+        }
+        if ( !requestDetails.guests ) {
+            isFieldFilled = false;
+            setSubmitCheck( (p) => ({...p, isGuestsSelected:false}) );
+        }
+
+        return isFieldFilled;
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
 
-        formValidationBeforeSubmit();
-
-        if ( requestDetails.date && requestDetails.time && requestDetails.guests ) {
+        if ( isReadyToSent() ) {
             setFormState(() => formRequestLoadingState() );
             submitAPI(new FormData(e.target))
                 .then((response) => {
