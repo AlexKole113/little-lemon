@@ -19,7 +19,6 @@ import mainReducer from "../reducers/mainReducer";
 const App = () => {
 
   //  TODO:
-  //   1. UNIT TESTS (FOR Occassion Form
   //   2. API
 
     //data from api
@@ -102,7 +101,7 @@ const App = () => {
      responseAPI: {
         availableTime: ['10:00', '15:00', '18:00'],
         availableDates: [],
-        availableOccasion: ['Birthday', 'Anniversary']
+        availableOccasion: ['Other', 'Birthday', 'Anniversary']
      },
     };
     const [mainState, dispatch] = useReducer( mainReducer, initialState );

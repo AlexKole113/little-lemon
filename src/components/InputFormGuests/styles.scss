@@ -1,17 +1,18 @@
 @import "../../styles/mixins/mixins";
 .guest-group {
-  padding: 1rem 0 0;
+  padding:  0 0 1rem;
   position: relative;
 
   .alert {
     position: absolute;
     left: 0;
-    top:0;
+    bottom:0;
     right: 0;
     height: 1rem;
     color: tomato;
     font-size: .6rem;
     font-style: italic;
+    padding: 0.15rem 0;
   }
 
 }

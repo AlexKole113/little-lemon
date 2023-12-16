@@ -3,7 +3,7 @@ import {useState} from "react";
 import './styles.scss';
 
 
-const InputFormDate = ({ date, dispatch }) => {
+const InputFormDate = ({ date, dispatch, formMessage }) => {
 
     const [state, setState] = useState({ error: false, message: null });
 
@@ -25,8 +25,10 @@ const InputFormDate = ({ date, dispatch }) => {
 
     return(
         <div className="date-group">
+            <label htmlFor="">Choose date*</label>
+            <input id={`date-input`} className={ state.error ? 'invalid' : '' } type={'date'} value={date} onChange={onChange} />
             { state.error && <span className="alert">{state.message}</span> }
-            <input className={ state.error ? 'invalid' : '' } type={'date'}  placeholder={`Choose Date*`} value={date} onChange={onChange} />
+            { formMessage &&  <span className="alert">{formMessage}</span> }
         </div>
     )
 }
