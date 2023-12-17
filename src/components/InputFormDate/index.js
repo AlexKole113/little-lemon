@@ -1,24 +1,29 @@
 import mainActions from "../../actions/mainActions";
-import {useState} from "react";
+import isFieldValid from "../FormReservation/inc/formValidator";
 import './styles.scss';
 
-
-const InputFormDate = ({ date, dispatch, formMessage }) => {
-
-    const [state, setState] = useState({ error: false, message: null });
-
+const InputFormDate = ({ date, dispatch, formState, setFormState }) => {
 
     const setDate  = (payload) => dispatch({type: mainActions.userRequest.updateDate.type, payload });
     const onChange = (e) => {
         e.preventDefault();
-        const today         = new Date();
-        const requestedDate = new Date( `${e.target.value} 23:59:59` )
-        if ( requestedDate < today ) {
-            setState((p)=> ({error: true, message: 'Doc hasn\'t invented a time machine yet' }));
+        const [isValueValid, validatorMessage ] = isFieldValid( e.target.id, e.target.value );
+
+        console.log(isValueValid)
+
+        if ( !isValueValid ) {
+            setFormState( (prevState) => {
+             const newState = {...prevState};
+             newState.fields.date = { isValid: false, message: validatorMessage.join(', ') }
+             return newState;
+            });
             return;
         }
-
-        setState((p)=> ({ error: false, message: null }));
+        setFormState( (prevState) => {
+            const newState = {...prevState};
+            newState.fields.date = { isValid: true, message: '' }
+            return newState;
+        });
         setDate(e.target.value);
     }
 
@@ -26,9 +31,8 @@ const InputFormDate = ({ date, dispatch, formMessage }) => {
     return(
         <div className="date-group">
             <label htmlFor="">Choose date*</label>
-            <input id={`date-input`} className={ state.error ? 'invalid' : '' } type={'date'} value={date} onChange={onChange} />
-            { state.error && <span className="alert">{state.message}</span> }
-            { formMessage &&  <span className="alert">{formMessage}</span> }
+            <input id={`date-input`} className={ !formState.fields.date.isValid ? 'invalid' : '' } type={'date'} value={date} onChange={onChange} />
+            { !formState.fields.date.isValid && <span className="alert">{formState.fields.date.message}</span> }
         </div>
     )
 }

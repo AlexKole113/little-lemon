@@ -3,8 +3,6 @@ import mainActions from "../actions/mainActions";
 const mainReducer = (state, action) => {
     let newState = ({ ...state });
 
-    console.log(action)
-
     switch (action.type) {
         case mainActions.cart.updateCart.type :
             newState.cart = action.payload
@@ -26,8 +24,6 @@ const mainReducer = (state, action) => {
         case mainActions.responseAPI.setAvailableTime.type :
             newState.responseAPI.availableTime = action.payload ;
             break;
-
-
 
 
         default:
