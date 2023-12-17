@@ -17,13 +17,16 @@
         gap: 1rem;
       }
     }
-    button[type="submit"] {
-      display: block;
-      width: max-content;
+    &_submit {
       margin: 0 auto 2rem;
       @include md {
         margin: 0 auto 5rem;
       }
+    }
+    button[type="submit"] {
+      display: block;
+      width: max-content;
+      margin: 0 auto;
       &:not([disabled]) {
         cursor: pointer;
       }
@@ -32,23 +35,6 @@
         background-color: #cecece;
         opacity: .3;
       }
-    }
-  }
-
-  .danger-notification {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .5rem;
-    background-color: tomato;
-    color: #ffffff;
-    font-size: 1.25rem;
-    svg {
-      fill: #ffffff;
-      width: 1rem;
-      height: 1rem;
-      margin: 0 .25rem;
-
     }
   }
 }

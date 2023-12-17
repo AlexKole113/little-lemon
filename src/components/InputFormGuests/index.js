@@ -1,7 +1,5 @@
-import {useState} from "react";
 import mainActions from "../../actions/mainActions";
 import './styles.scss'
-import isFieldValid from "../FormReservation/inc/formValidator";
 
 
 const InputFormGuests = ({guests, dispatch, formMessage, formState, setFormState}) => {
@@ -11,16 +9,29 @@ const InputFormGuests = ({guests, dispatch, formMessage, formState, setFormState
     const setGuestNumber = (payload) => dispatch({type: mainActions.userRequest.updateGuests.type, payload });
     const onChange = (e) => {
         e.preventDefault();
-        const [isValueValid, validatorMessage ] = isFieldValid( e.target.id, e.target.value, guestNumberLimits );
 
-        if ( !isValueValid ) {
+        const { min , max } = guestNumberLimits;
+
+        if ( e.target.value < min ) {
+            setGuestNumber(min);
             setFormState( (prevState) => {
                 const newState = {...prevState};
-                newState.fields.guests = { isValid: false, message: validatorMessage.join(', ') }
+                newState.fields.guests = { isValid: true, message: '' }
                 return newState;
             });
             return;
         }
+
+        if ( e.target.value > max ) {
+            setGuestNumber(max);
+            setFormState( (prevState) => {
+                const newState = {...prevState};
+                newState.fields.guests = { isValid: true, message: '' }
+                return newState;
+            });
+            return;
+        }
+
         setFormState( (prevState) => {
             const newState = {...prevState};
             newState.fields.guests = { isValid: true, message: '' }

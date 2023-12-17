@@ -18,9 +18,6 @@ import mainReducer from "../reducers/mainReducer";
 
 const App = () => {
 
-  //  TODO:
-  //   2. API
-
     //data from api
   const initialState = {
      app:{},

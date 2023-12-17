@@ -1,0 +1,23 @@
+@import "../../styles/mixins/mixins";
+.success-report {
+  text-align: center;
+  padding: 5rem 0;
+  @include md {
+    padding: 2rem 0 11.325rem;
+  }
+  svg {
+    fill: green;
+    width: 5rem;
+    height: auto;
+    max-width: 60%;
+  }
+
+  &_title {
+    font-size: 2.5rem;
+    color: green;
+  }
+  &_text {
+
+  }
+
+}
