@@ -7,7 +7,7 @@ import SelectFormOccasion from "../SelectFormOccasion";
 import {fetchAPI, submitAPI} from "../../__mocks__/apiMock";
 import mainActions from "../../actions/mainActions";
 import Loader from "../Loader";
-import {formRequestSuccessState, formRequestLoadingState, formRequestErrorState, formCompleteState} from "./inc/formStateSetupers.js";
+import {formRequestSuccessState, formRequestLoadingState, formRequestErrorState } from "./inc/formStateSetupers.js";
 import FormSubmitSuccessMessage from "../FormSubmitSuccessMessage";
 import Notification from "../Notification";
 
@@ -89,7 +89,7 @@ const FormReservation = ({availableValues, requestDetails, dispatch}) => {
             <div className="container">
 
                 {
-                    formState.isSent ? <FormSubmitSuccessMessage /> : <div className="reservation-form-group">
+                    formState.isSent ? <FormSubmitSuccessMessage title={'Successfully sent!'} message={'Thank you for your reservation!'} /> : <div className="reservation-form-group">
                         <div className="reservation-form-group_notify">
                             { formState.state.error && <Notification type={'danger'} message={'Server Error'} />}
                         </div>

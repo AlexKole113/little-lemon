@@ -1,12 +1,11 @@
 @import "../../styles/mixins/mixins";
 
-.reservation-form-group {
+.login-group {
   max-width: 26rem;
   margin: 0 auto;
   position: relative;
   width: 100%;
-
-  .reservation-form {
+  .login-form {
     &_fields {
       display: grid;
       grid-template-columns: 1fr;
@@ -16,6 +15,14 @@
         margin-bottom: 5rem;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+      }
+      .login-group {
+        padding: 0 0 1rem;
+        position: relative;
+      }
+      .password-group {
+        padding: 0 0 1rem;
+        position: relative;
       }
     }
     &_submit {
@@ -28,14 +35,7 @@
       display: block;
       width: max-content;
       margin: 0 auto;
-      &:not([disabled]) {
-        cursor: pointer;
-      }
-      &[disabled] {
-        border: #cecece;
-        background-color: #cecece;
-        opacity: .3;
-      }
+      cursor: pointer;
     }
   }
 }

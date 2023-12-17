@@ -9,8 +9,6 @@ const InputFormDate = ({ date, dispatch, formState, setFormState }) => {
         e.preventDefault();
         const [isValueValid, validatorMessage ] = isFieldValid( e.target.id, e.target.value );
 
-        console.log(isValueValid)
-
         if ( !isValueValid ) {
             setFormState( (prevState) => {
              const newState = {...prevState};
