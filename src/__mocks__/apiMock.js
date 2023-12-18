@@ -3,7 +3,7 @@
 // so..
 
 const responseTimeModifier      = 2000;
-const successAppearanceModifier = .95;
+const successAppearanceModifier = .98;
 
 const seededRandom = seed => {
     const m = 2 ** 35 - 31;
