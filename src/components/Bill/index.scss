@@ -1,0 +1,128 @@
+@import "../../styles/mixins/mixins";
+
+.bill {
+  .section-title {
+    text-align: center;
+    margin: 0 0 6rem;
+  }
+
+  .checkout-group {
+      margin: 0 auto;
+      @include md {
+        max-width: 35rem;
+      }
+    .dishes {
+      margin: 1rem 0 1rem;
+      padding: 0 0 1rem 1rem;
+      border-bottom: 1px solid black;
+      &_item {
+        font-size: .85rem;
+        font-weight: 600;
+        @include md {
+          font-weight: 800;
+          font-size: 1.25rem;
+        }
+        &_wrapper {
+          display: flex;
+          align-items: center;
+          margin: 0 0 0.75rem;
+          position: relative;
+        }
+
+        &_title {
+          width: 30%;
+          @include md {
+            width: 50%;
+          }
+        }
+        &_controls {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 70%;
+          @include md {
+            width: 50%;
+          }
+          &_price {
+            width: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          .item-qty-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 1rem 0 auto;
+            @include md {
+              margin: 0 3rem 0 auto;
+            }
+            &_increase {
+              text-decoration: none;
+              margin: 0 0.75rem;
+              color: #000000;
+            }
+            &_input {
+              width: 3rem;
+              padding: 0.2rem;
+              @include md {
+                padding: 0.4rem;
+              }
+            }
+            &_decrease {
+              text-decoration: none;
+              margin: 0 0.75rem;
+              color: #000000;
+
+            }
+          }
+        }
+
+        &_price {
+
+        }
+        &_delete {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            width: 1rem;
+            height: 1rem;
+            fill: tomato;
+          }
+
+        }
+      }
+    }
+
+    .total {
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &_label {
+        padding-right: 1rem;
+
+      }
+      &_amount {
+
+      }
+    }
+  }
+  .cart-empty {
+    text-align: center;
+    font-size: 1.45rem;
+    margin: 2rem 0 10rem;
+  }
+
+  .order-btns {
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
