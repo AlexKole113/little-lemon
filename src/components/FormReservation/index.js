@@ -101,7 +101,7 @@ const FormReservation = ({availableValues, requestDetails, dispatch}) => {
                                 <SelectFormOccasion availableOccasion={availableOccasion} occasion={requestDetails.occasion} dispatch={dispatch} formState={formState} setFormState={setFormState} />
                             </div>
                             <div className="reservation-form_submit">
-                                { isAllFieldsValid() ? <button type="submit" className={`brand-button`} >Reserve a table</button> : <Notification type={'warning'} message={'Please correct the values'} /> }
+                                { isAllFieldsValid() ? <button aria-label="On Click" type="submit" className={`brand-button`} >Reserve a table</button> : <Notification type={'warning'} message={'Please correct the values'} /> }
                             </div>
                             { formState.state.loading && <Loader />}
                         </form>

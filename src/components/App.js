@@ -108,7 +108,7 @@ const App = () => {
       <section className={`app`}>
           <Router>
             <Header cart={mainState.cart} />
-              {/*<ErrorBoundary>*/}
+              <ErrorBoundary>
                     <React.Suspense fallback={null}>
                         <Routes>
                             <Route path="/" element={<PageHome cart={mainState.cart} dispatch={dispatch} menu={mainState.menu} />}></Route>
@@ -121,7 +121,7 @@ const App = () => {
                             <Route path="*" element={<Page404/>}></Route>
                         </Routes>
                     </React.Suspense>
-              {/*</ErrorBoundary>*/}
+              </ErrorBoundary>
             <Footer cart={mainState.cart} />
           </Router>
       </section>
